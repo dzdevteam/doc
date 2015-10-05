@@ -6,14 +6,20 @@
 
     <body>
         <div class="container">
+            <div class="head-bar">
+                <div class="toggle">
+                    <span class="fa fa-bars">&nbsp;</span>
+                </div>
+            </div>
             <div class="overview">
-                <span class="toggle">close</span>
+                <div class="toggle">
+                    <span class="fa fa-close">&nbsp;</span>
+                </div>
                 {% include header.html %}
                 {% include nav.html %}
             </div>
-
             <div class="content">
-                <span class="toggle">open</span>
+
                 {{ content }}
             </div>
         </div>

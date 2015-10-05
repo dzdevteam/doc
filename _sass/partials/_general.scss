@@ -26,7 +26,7 @@ body{
     position: absolute;
     right: 0;
     
-    @media screen and (max-width: $sidebar-collapse){
+    @media screen and (max-width: $sidebar-collapse) {
         width: 100%;
     }
 
@@ -71,11 +71,10 @@ h1, h2, h3, h4, h5, h6{
 
 h1 {
     font-size: 3.1em;
-    padding: 30px 0 18px;
+    padding: 30px 0 5px;
     text-align: right;
     border-bottom: $green 9px solid;
     width: 100%;
-    line-height: 0.61;
     margin: 0 0 20px;
 
     &:before {
@@ -91,12 +90,11 @@ h1 {
 
 h2 {
     font-size: 2em;
-    padding: 30px 0 12px;
+    padding: 30px 0 5px;
     width: 90%;
     text-align: center;
     border-bottom: 5px solid $green;
     margin: 0 auto 20px;
-    line-height: 0.63;
 
     &:before {
         content: counter(h1-counter) "." counter(h2-counter) " ";
@@ -117,7 +115,6 @@ h3{
     text-align: left;
 /*     border-bottom: 2px solid $green; */
     margin: 0 auto 20px;
-    line-height: 0.65;
     font-weight: 300;
 
     &:before {
@@ -139,7 +136,6 @@ h4{
     text-align: left;
 /*     border-bottom: 2px solid $green; */
     margin: 0 auto 18px;
-    line-height: 0.67;
 
     &:before {
         content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
@@ -159,9 +155,7 @@ h5{
     padding: 40px 0 5px;
     width: 90%;
     text-align: left;
-/*     border-bottom: 2px solid $green; */
     margin: 0 auto 15px;
-    line-height: 0.68;
 
     &:before {
         content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) " ";
@@ -177,7 +171,6 @@ a{
     .content &{
         border-bottom: $darkgreen 1px solid;
         padding: 0px 2px;
-
         &:hover{
             border-bottom: transparent 1px solid;
         }
@@ -232,4 +225,27 @@ p + p{
 
 img.center-image {
     margin: auto;
+}
+
+.toggle span {
+    font-size: 1.7em;
+    padding-left: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.head-bar {
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    height: 1.8em;
+    background-color: $green;
+    z-index: 9;
+
+    .toggle {
+        display: inline-block;
+    }
+}
+@media screen and (min-width: $sidebar-collapse) {
+    .head-bar {
+        display: none;
+    }
 }
