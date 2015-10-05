@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6{
 
 h1 {
     font-size: 3.1em;
-    padding: 30px 0 5px;
+    padding: 30px 0 18px;
     text-align: right;
     border-bottom: $green 9px solid;
     width: 100%;
@@ -79,7 +79,7 @@ h1 {
     margin: 0 0 20px;
 
     &:before {
-        content: counter(h1-counter) " ";
+        content: counter(h1-counter) ". ";
     }
 }
 
@@ -91,7 +91,7 @@ h1 {
 
 h2 {
     font-size: 2em;
-    padding: 30px 0 5px;
+    padding: 30px 0 12px;
     width: 90%;
     text-align: center;
     border-bottom: 5px solid $green;
@@ -100,11 +100,11 @@ h2 {
 
     &:before {
         content: counter(h1-counter) "." counter(h2-counter) " ";
+        counter-increment: h2-counter;
     }
 }
 
 .h2{
-    counter-increment: h2-counter;
     counter-reset: h3-counter;
     padding-top: 60px;
 }
@@ -115,27 +115,29 @@ h3{
     padding: 20px 0 5px;
     width: 90%;
     text-align: left;
-    border-bottom: 4px solid $green;
+/*     border-bottom: 2px solid $green; */
     margin: 0 auto 20px;
     line-height: 0.65;
+    font-weight: 300;
 
     &:before {
         content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) " ";
+        counter-increment: h3-counter;
     }
 }
 
 .h3{
-    counter-increment: h3-counter;
-    counter-reset: h4-counter;
+    counter-reset: h4-counter 1;
     padding-top: 40px;
 }
 
 h4{
     font-size: 1.5em;
+    font-weight: 100;
     padding: 18px 0 5px;
     width: 90%;
     text-align: left;
-    border-bottom: 3px solid $green;
+/*     border-bottom: 2px solid $green; */
     margin: 0 auto 18px;
     line-height: 0.67;
 
@@ -153,10 +155,11 @@ h4{
 
 h5{
     font-size: 1.3em;
+    font-weigh: 100;
     padding: 40px 0 5px;
     width: 90%;
     text-align: left;
-    border-bottom: 2px solid $green;
+/*     border-bottom: 2px solid $green; */
     margin: 0 auto 15px;
     line-height: 0.68;
 
