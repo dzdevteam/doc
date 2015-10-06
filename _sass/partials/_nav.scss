@@ -87,6 +87,24 @@
                 }
             }
         }
+        > li > ul > li {
+            &.parent {
+                > a::after {
+                    content: ' ▼';
+                    font-size: 0.7em;
+                }
+                ul {
+                    height: 0px;
+                    overflow: hidden;
+                    &.current {
+                        height: auto;
+                    }
+                }
+            }
+            &.current ul {
+                height: auto;
+            }
+        }
     }
 }
 
