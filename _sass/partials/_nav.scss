@@ -87,6 +87,7 @@
                 }
             }
         }
+        // Hiding third level menu when not needed
         > li > ul > li {
             &.parent {
                 > a::after {
@@ -94,15 +95,18 @@
                     font-size: 0.7em;
                 }
                 ul {
-                    height: 0px;
+                    max-height: 0px;
+                    transition: max-height 0.5s;
                     overflow: hidden;
                     &.current {
-                        height: auto;
+                        max-height: 300px;
+                        transition: max-height 0.5s;
                     }
                 }
             }
             &.current ul {
-                height: auto;
+                max-height: 300px;
+                transition: max-height 0.5s;
             }
         }
     }
