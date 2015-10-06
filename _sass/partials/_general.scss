@@ -226,6 +226,9 @@ p + p{
 img.center-image {
     margin: auto;
 }
+p img:only-child {
+    margin: auto;
+}
 
 .toggle span {
     font-size: 1.7em;
