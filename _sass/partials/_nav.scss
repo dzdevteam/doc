@@ -88,7 +88,7 @@
             }
         }
         // Hiding third level menu when not needed
-        > li > ul > li {
+        > li > ul  li {
             &.parent {
                 > a::after {
                     content: ' ▼';
@@ -99,13 +99,13 @@
                     transition: max-height 0.5s;
                     overflow: hidden;
                     &.current {
-                        max-height: 300px;
+                        max-height: 500px;
                         transition: max-height 0.5s;
                     }
                 }
             }
             &.current ul {
-                max-height: 300px;
+                max-height: 500px;
                 transition: max-height 0.5s;
             }
         }

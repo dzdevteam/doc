@@ -35,6 +35,12 @@ body{
         top: 5px;
         left: 5px;
     }
+    
+    & ul li::before {
+        content: '\25b8';
+        margin-right: 5px;
+        color: $green;
+    }
 }
 
 section{
@@ -124,7 +130,7 @@ h3{
 }
 
 .h3{
-    counter-reset: h4-counter 1;
+    counter-reset: h4-counter;
     padding-top: 40px;
 }
 
@@ -138,12 +144,12 @@ h4{
     margin: 0 auto 18px;
 
     &:before {
+        counter-increment: h4-counter;
         content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
     }
 }
 
 .h4{
-    counter-increment: h4-counter;
     counter-reset: h5-counter 1;
     padding-top: 30px;
 }
@@ -182,10 +188,16 @@ a{
 }
 
 
-img{
-    display: block;
+img {
+    display: inline-block;
     max-width: 100%;
-    margin: 20px 0;
+    
+    p &:only-child {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+    }
 }
 
 code{
@@ -221,13 +233,6 @@ iframe{
 
 p + p{
     margin-top: 20px;
-}
-
-img.center-image {
-    margin: auto;
-}
-p img:only-child {
-    margin: auto;
 }
 
 .toggle span {
