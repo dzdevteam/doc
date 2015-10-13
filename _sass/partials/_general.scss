@@ -35,12 +35,6 @@ body{
         top: 5px;
         left: 5px;
     }
-    
-    & ul li::before {
-        content: '\25b8';
-        margin-right: 5px;
-        color: $green;
-    }
 }
 
 section{
@@ -57,6 +51,73 @@ section{
         padding-left: 5%;
         padding-right: 5%;
         box-sizing: border-box;
+    }
+    
+    ol {
+        counter-reset: li;
+        list-style: none;
+        position: relative;
+        padding-bottom: 10px;
+        & > li {
+            padding: 5px 0 5px 45px;
+            position: relative;
+            margin-bottom: 5px;
+            &:before {
+                content: counter(li);
+                counter-increment: li;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 20px;
+                padding: 0 10px 0 0;
+                color: #999;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 35px;
+                text-align: right;
+                border-right: 1px solid #ddd;
+            }
+            &:after {
+                content: ".";
+                display: block;
+                clear: both;
+                visibility: hidden;
+                line-height: 0;
+                height: 0;
+            }
+        }
+    }
+    
+    ul {
+        padding-left: calc(5% + 20px);
+        li::before {
+            content: '\25b8';
+            margin-right: 10px;
+            color: $green;
+            vertical-align: text-bottom;
+        }
+    }
+    
+    table {
+        width: 90%;
+        margin-left: 5%;
+        thead > tr > th {
+            border-bottom: 2px solid #dddddd;
+            padding: 5px;
+            font-weight: bold;
+        }
+        tbody {
+            & > tr {
+                &:nth-of-type(odd) {
+                    background-color: #f9f9f9;
+                }
+                td {
+                    padding: 5px;
+                    border-top: 1px solid #dddddd;
+                }
+            }
+        }
     }
 
     pre {
@@ -261,5 +322,19 @@ p + p{
 @media screen and (min-width: $sidebar-collapse) {
     .head-bar {
         display: none;
+    }
+}
+
+// Specific style
+#joomla-video, #joomla-dota {
+    table {
+        tbody > tr > td {
+            &:first-child {
+                white-space: nowrap;
+            }
+            &:nth-child(2) {
+                text-align: center;
+            }
+        }
     }
 }
